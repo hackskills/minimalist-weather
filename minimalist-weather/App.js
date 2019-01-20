@@ -1,11 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Animated } from 'react-native';
+import { Weather } from './components/Weather';
+import { API_KEY } from './utils/WeatherAPIKey';
 
 export default class App extends React.Component {
+  state = {
+    isLoading: false
+  };
+
   render() {
+    const { isLoading } = this.state;
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        {isLoading ? (
+          <Text>Fetching the weather</Text>
+        ) : (
+            <View>
+              {Weather()}
+            </View>
+          )}
       </View>
     );
   }
