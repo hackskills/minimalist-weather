@@ -8,12 +8,12 @@ export const Weather = ({ weather, temperature }) => {
     return (
         <View style={[styles.weatherContainer, { backgroundColor: weatherConditions[weather].color }]}>
             <View style={styles.headerContainer}>
-                <MaterialCommunityIcons size={72} name={weatherConditions[weather].icon} color={'#fff'} />
+                <MaterialCommunityIcons size={48} name={weatherConditions[weather].icon} color={'#fff'} />
                 <Text style={styles.tempText}>{temperature}˚C</Text>
             </View>
             <View style={styles.bodyContainer}>
                 <Text style={styles.title}>{weatherConditions[weather].title}</Text>
-                <Text style={styles.subtitle}>{weatherConditions[weather.subtitle]}</Text>
+                <Text style={styles.subtitle}>{weatherConditions[weather].subtitle}</Text>
             </View>
         </View>
     );
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     tempText: {
-        fontSize: 72,
+        fontSize: 48,
         color: '#fff'
     },
     bodyContainer: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         marginBottom: 40
     },
     title: {
-        fontSize: 60,
+        fontSize: 48,
         color: '#fff'
     },
     subtitle: {
